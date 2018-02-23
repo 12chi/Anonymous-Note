@@ -1,0 +1,33 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div style="text-align:center"> -->
+<div class='containter' style="text-align:center">
+  <h1>
+    Anonymous Notes
+  </h1>
+</div>
+<div class='containter'>
+  <form (submit)='addNote()'>
+    <div class="form-group row">
+        <label for="text" class='col-1 align-self-end'>Note:</label>
+        <input type="text" class="form-control col-5" id="text" name="newNote.text" [(ngModel)]="newNote.text">
+        <input class="btn btn-primary col-2" type="submit" value="Add Note">
+    </div>
+  </form>
+</div>
+<div *ngIf="notes.length != 0" class='container'>
+  <div *ngFor="let note of notes" class="container">
+    <div class='row justify-content-end'>
+    <div class="col-5">
+      <p><small>Noted on: {{ note.createdAt | date:'medium' }}</small></p>
+    </div>
+  </div>
+  <div class='row justify-content-start'>
+    <div class='col-8'>
+      {{ note.text }}
+    </div>
+    </div>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>
