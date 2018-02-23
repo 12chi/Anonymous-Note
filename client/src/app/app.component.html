@@ -14,8 +14,8 @@
     </div>
   </form>
 </div>
-<div *ngIf="notes.length != 0" class='container'>
-  <div *ngFor="let note of notes" class="container">
+<div *ngIf="notes.length != 0" class='row'>
+  <div *ngFor="let note of notes" class="row">
     <div class='row justify-content-end'>
     <div class="col-5">
       <p><small>Noted on: {{ note.createdAt | date:'medium' }}</small></p>
